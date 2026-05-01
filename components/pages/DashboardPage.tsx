@@ -248,7 +248,7 @@ export default function DashboardPage() {
               <YAxis hide />
               <Tooltip
                 contentStyle={{ fontSize: 11, borderRadius: 8, border: "1px solid #e2e8f0", boxShadow: "0 4px 12px rgba(0,0,0,0.08)" }}
-                formatter={(v: number) => [v.toLocaleString(), "Founders"]}
+                formatter={(v) => [Number(v).toLocaleString(), "Founders"]}
               />
               <Line type="monotone" dataKey="value" stroke="#6366f1" strokeWidth={2.5} dot={false} />
             </LineChart>

@@ -156,7 +156,7 @@ export default function MetricsPage() {
               <YAxis tick={{ fontSize: 11, fill: "#94a3b8" }} axisLine={false} tickLine={false} tickFormatter={v => `$${(v/1000).toFixed(0)}k`} />
               <Tooltip
                 contentStyle={{ fontSize: 11, borderRadius: 8, border: "1px solid #e2e8f0" }}
-                formatter={(v: number) => [`$${v.toLocaleString()}`, "MRR"]}
+                formatter={(v) => [`$${Number(v).toLocaleString()}`, "MRR"]}
               />
               <Bar dataKey="mrr" fill="#6366f1" radius={[6, 6, 0, 0]} />
             </BarChart>
