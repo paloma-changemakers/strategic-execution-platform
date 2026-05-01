@@ -246,7 +246,7 @@ export default function ExecutionPage() {
         </div>
       ) : (
         /* Kanban View */
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
+        <div className="grid-kanban">
           {kanbanColumns.map((col) => {
             const colTasks = allTasks.filter(t => t.status === col.id);
             return (

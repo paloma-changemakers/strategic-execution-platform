@@ -109,12 +109,12 @@ export default function MetricsPage() {
       </div>
 
       {/* KPI Grid */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, marginBottom: 16 }}>
+      <div className="grid-3" style={{ marginBottom: 16 }}>
         {kpis.map((kpi, i) => <KPICard key={i} kpi={kpi} />)}
       </div>
 
       {/* Charts row */}
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 16, marginBottom: 16 }}>
+      <div className="grid-1-15" style={{ marginBottom: 16 }}>
 
         {/* WAF Trend */}
         <Card>
@@ -165,7 +165,7 @@ export default function MetricsPage() {
       </div>
 
       {/* Alerts + Executive Summary */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+      <div className="grid-2">
 
         {/* Alerts */}
         <Card>

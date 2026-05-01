@@ -4,23 +4,12 @@
   --background: #f8fafc;
   --foreground: #0f172a;
   --sidebar-bg: #0f172a;
-  --sidebar-text: #94a3b8;
-  --sidebar-active: #6366f1;
   --card-bg: #ffffff;
   --border: #e2e8f0;
   --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
-  --muted: #64748b;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   background: var(--background);
@@ -30,9 +19,35 @@ body {
   line-height: 1.5;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
+::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+/* Responsive grid helpers */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.grid-3-1 { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 16px; }
+.grid-1-15 { display: grid; grid-template-columns: 1fr 1.5fr; gap: 16px; }
+.grid-1-16 { display: grid; grid-template-columns: 1fr 1.6fr; gap: 16px; }
+.grid-kanban { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+
+@media (max-width: 768px) {
+  .grid-3,
+  .grid-2,
+  .grid-3-1,
+  .grid-1-15,
+  .grid-1-16,
+  .grid-kanban {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hide-mobile { display: none !important; }
+  .page-padding { padding: 16px !important; }
+  .page-title { font-size: 18px !important; }
+  .card-padding { padding: 14px !important; }
+}
+
+@media (min-width: 769px) {
+  .mobile-topbar { display: none !important; }
+  .mobile-overlay { display: none !important; }
+}
